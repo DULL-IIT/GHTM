@@ -1,0 +1,25 @@
+# requirements.txt
+
+# Core dependencies
+jupyter
+gensim
+octis
+bnlp-toolkit
+gdown
+bkit
+pandas>=1.0.0
+numpy>=1.20.0
+scikit-learn
+scipy
+tqdm
+
+# PyTorch (install first)
+torch>=2.0.0
+torchvision
+torchaudio
+
+# PyG dependencies (must be installed in this order)
+--no-binary=torch-sparse torch-sparse
+--no-binary=torch-scatter torch-scatter
+
+torch-geometric
