@@ -7,7 +7,7 @@ import re
 import pickle 
 import random
 import os
-from gensim import corpora
+#from gensim import corpora
 import argparse
 
 def data_loading(file_path: str, text_column: str):
@@ -108,8 +108,8 @@ def prepare_data(data, stopwords):
     
     processed_data = [clean_corpus(doc, stopwords) for doc in data]
     print(f'Processed {len(processed_data)} text documents.')
-    dictionary = corpora.Dictionary(processed_data)
-    print(f'Vocabulary: {dictionary}')
+    #dictionary = corpora.Dictionary(processed_data)
+    #print(f'Vocabulary: {dictionary}')
 
     with open('./data/processed_data.pickle', 'wb') as f:
         pickle.dump(processed_data, f)

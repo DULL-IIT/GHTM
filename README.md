@@ -1,7 +1,7 @@
 # GHTM-Graph-based-Hybrid-Topic-Modeling
 
 This repo contains the work behind the paper:  
-**GHTM: A Graph-based Hybrid Topic Modeling Approach in Low-Resource Bengali Language**
+**GHTM: A graph-based hybrid topic modeling approach with a benchmark dataset for the low-resource Bengali language**
 
 ---
 
@@ -9,41 +9,46 @@ This repo contains the work behind the paper:
 
 GHTM model consists of three stages:
 
-- **Text Feature Extraction**: using a combination of TF-IDF and GloVe representations.
-- **Graph Construction & GCN**: a graph is built from the extracted vectors, which is processed by a Graph Convolutional Network (GCN) to produce similarity-aware embeddings.
-- **Matrix Factorization**: applied to the embeddings to generate diverse and coherent topic keywords.
+- **Text Vectorization Stage**: Converts the text documents into a sum of TF-IDF weighted GloVe embeddings. 
 
-This hybrid approach helps GHTM uncover coherent, structure-aware latent topics.
+- **Graph-based Representation Learning Stage**: Generates a KNN graph and separates it into sub-graphs. Document vectors, represented as graph nodes, are enriched by the GCN layers.
 
+- **Non-negative Matrix Factorization Stage**: Accomplishes topic modeling by first performing an absolute value transformation on the newly generated embedding matrix and then factorizing it into two matrices. 
+
+- **Topic Representation Stage**: Identifies the top representative documents and chooses a collection of keywords to represent the topics.
 ---
 
 ## Installation
 
 ```bash
-git clone https://github.com/kya602/GHTM-Graph-based-Hybrid-Topic-Modeling.git
-cd GHTM-Graph-based-Hybrid-Topic-Modeling
+git clone https://github.com/DULL-IIT/GHTM/
+cd GHTM
 
-pip install -r requirements.txt
+conda env create -f environment.yml
+conda activate ghtm
 ```
 
 ---
 
 ## Prepare Data
 
-Run the following notebook to prepare data:
+Run the following commands to prepare Bengali data for GHTM:
 
 ```bash
-jupyter notebook GHTM/Data Preparation.ipynb
-```
+cd GHTM
+python data_prep.py --file_path ../datasets/NCTBText/NCTBText.csv --text_column text
 
-This is a reference notebook for preprocessing and preparing data.
+```
 
 ---
 
 ## Models and Files Placement
 
-- Download the GloVe models for Bangla from:  
-  🔗 https://github.com/sagorbrur/GloVe-Bengali
+- GloVe model for Bengali will be automatically downloaded and placed in ```GHTM/model/```
+
+To manually do it for other languages:
+
+- Download the GloVe model
 
 - Place the model file inside the following directory:
 

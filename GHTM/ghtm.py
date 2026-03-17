@@ -20,6 +20,7 @@ import zipfile
 import torch
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(f'Device: {device}')
 
 def set_seed(seed=42):
     random.seed(seed)
@@ -44,7 +45,7 @@ def bn_glove_model():
         print("Model file already exists. Skipping download.")
         return
     
-    print("Downloading model...")
+    print("Downloading GloVe model...")
 
     response = requests.get(model_url, stream=True)
     if response.status_code == 200:

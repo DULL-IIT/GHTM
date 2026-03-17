@@ -1,0 +1,30 @@
+name: ghtm
+
+channels:
+  - pytorch
+  - pyg
+  - conda-forge
+  - defaults
+
+dependencies:
+  
+  - python=3.10
+
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - tqdm
+  - jupyter
+  - requests
+
+ 
+  - pytorch
+  - pyg
+  - pyg-lib
+
+  - pip
+  - pip:
+      - bnlp-toolkit
+      - bkit
+      - gdown
