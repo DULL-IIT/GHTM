@@ -2,14 +2,11 @@ name: ghtm
 
 channels:
   - pytorch
-  - pyg
   - conda-forge
   - defaults
 
 dependencies:
-  
   - python=3.10
-
   - numpy
   - pandas
   - scipy
@@ -17,13 +14,9 @@ dependencies:
   - tqdm
   - jupyter
   - requests
-
- 
-  - pytorch
-  - pyg
-  - pyg-lib
-
+  - pytorch=2.7.0
   - pip
+  
   - pip:
       - bnlp-toolkit
       - bkit

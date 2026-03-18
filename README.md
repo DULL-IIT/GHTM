@@ -20,9 +20,19 @@ The GHTM model consists of three stages:
 ```bash
 git clone https://github.com/DULL-IIT/GHTM/
 cd GHTM
-
+```
+If you prefer conda then run:
+```
 conda env create -f environment.yml
 conda activate ghtm
+python setup.py
+```
+
+Or you can try pip:
+
+```
+pip install -r requirements.txt
+
 ```
 
 ## Prepare Data
