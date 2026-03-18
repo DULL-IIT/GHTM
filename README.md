@@ -7,7 +7,7 @@ This repo contains the work behind the paper:
 
 ## Overview
 
-GHTM model consists of three stages:
+The GHTM model consists of three stages:
 
 - **Text Vectorization Stage**: Converts the text documents into a sum of TF-IDF weighted GloVe embeddings. 
 
@@ -44,7 +44,7 @@ python data_prep.py --file_path ../datasets/NCTBText/NCTBText.csv --text_column 
 
 ## Models and Files Placement
 
-- GloVe model for Bengali will be automatically downloaded and placed in ```GHTM/model/```
+- GloVe model for Bengali will be automatically downloaded and placed in `GHTM/model/`
 
 To manually do it for other languages:
 
@@ -62,15 +62,13 @@ Make sure the path matches what’s expected in the notebook.
 
 ## Train the Model
 
-To train the topic model and generate topic words, run:
+To train GHTM and generate topic words, run:
 
 ```bash
-jupyter notebook GHTM/GHTM.ipynb
+python ghtm.py --num_topics 8 --top_n_words 10 --num_clusters 4 --epochs 100
 ```
 
-This notebook shows:
-- How to train the model for topic modeling.
-- How to evaluate the model and extract topic keywords.
+Note: Notebooks are available in GHTM/notebooks. 
 
 ---
 # NCTBText: Bengali Dataset
@@ -78,13 +76,7 @@ This notebook shows:
 This dataset contains Bengali textual data curated from NCTB (National Curriculum and Textbook Board) textbooks, which are widely used in Bangladeshi schools. 
 Source materials are derived from: https://nctb.gov.bd/ 
 
----
-
-## Overview
-
-This dataset was curated to support research in Bengali NLP tasks such as:
-- Topic Modeling
-- Text Classification
+This dataset was curated as a benchmark for Bengali topic modeling and to support research in other Bengali NLP tasks.
 
 The raw text was extracted from official NCTB textbooks and processed using multiple stages of cleaning and filtering.
 
