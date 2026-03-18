@@ -3,9 +3,6 @@
 This repo contains the work behind the paper:  
 **GHTM: A graph-based hybrid topic modeling approach with a benchmark dataset for the low-resource Bengali language**
 
----
-
-## Overview
 
 The GHTM model consists of three stages:
 
@@ -28,8 +25,6 @@ conda env create -f environment.yml
 conda activate ghtm
 ```
 
----
-
 ## Prepare Data
 
 Run the following commands to prepare Bengali data for GHTM:
@@ -39,10 +34,9 @@ cd GHTM
 python data_prep.py --file_path ../datasets/NCTBText/NCTBText.csv --text_column text
 
 ```
+After this step, clean and tokenized data will be saved in `GHTM/data` as `processed_data.pickle`, prepared for action.
 
----
-
-## Models and Files Placement
+## GloVe Model Placement
 
 - GloVe model for Bengali will be automatically downloaded and placed in `GHTM/model/`
 
@@ -50,15 +44,10 @@ To manually do it for other languages:
 
 - Download the GloVe model
 
-- Place the model file inside the following directory:
-
-```
-GHTM/model/
-```
+- Place the model file inside the directory: `GHTM/model/`
 
 Make sure the path matches what’s expected in the notebook.
 
----
 
 ## Train the Model
 
@@ -68,7 +57,10 @@ To train GHTM and generate topic words, run:
 python ghtm.py --num_topics 8 --top_n_words 10 --num_clusters 4 --epochs 100
 ```
 
-Note: Notebooks are available in GHTM/notebooks. 
+Note: 
+- Notebooks are available in `GHTM/notebooks` for demonstration.
+- `environment.yml` is written to set up the conda environment for running GHTM only. The experiments done for the comprehensive benchmarking are demonstrated in `experiments`, but the environment is not set up for running the experiments.
+
 
 ---
 # NCTBText: Bengali Dataset
